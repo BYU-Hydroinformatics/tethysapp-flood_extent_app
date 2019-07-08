@@ -2,6 +2,7 @@
 version: 1.0
 # This should match the app - package name in your setup.py
 name: flood_extent_app
+setup_path: setup-auto.py
 
 conda:
   skip: false
