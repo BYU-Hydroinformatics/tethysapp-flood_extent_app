@@ -458,7 +458,7 @@ def getdates(request):
         request_params = dict(watershed_name=watershed, subbasin_name=subbasin, reach_id=reach)
         res = requests.get(api_url, params=request_params, headers=request_headers)
 
-        dates = ast.literal_eval(res.content)
+        dates = ast.literal_eval(res.content.decode("utf-8"))
         fulldate = []
 
         for date in dates:

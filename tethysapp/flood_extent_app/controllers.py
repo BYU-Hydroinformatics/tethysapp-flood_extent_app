@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from tethys_sdk.gizmos import *
-import requests
-import ast
-import os
 from .model import get_all_regions, add_new_region
 from .app import FloodExtentApp as app
 
