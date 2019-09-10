@@ -94,7 +94,7 @@ def createnetcdf(request):
 
         return_obj = {'success': True}
 
-        content = res.content.splitlines()
+        content = res.content.decode('utf-8').splitlines()
 
         times = []
         flowlist = []
