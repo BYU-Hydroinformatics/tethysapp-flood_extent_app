@@ -86,7 +86,7 @@ def createnetcdf(request):
 
     request_params = dict(watershed_name=watershed, subbasin_name=subbasin, reach_id=comid,
                           forecast_folder=date, stat_type=forecasttype, return_format='csv')
-    request_headers = dict(Authorization=token)
+    request_headers = dict(Authorization="Token " + token)
     res = requests.get(api_url, params=request_params,
                        headers=request_headers)
 
@@ -239,12 +239,12 @@ def displaywarningpts(request):
         returnperiods = {'2': 'yellow', '10': 'red', '20': 'purple'}
 
         return_obj = {}
-
+        request_headers = dict(Authorization="Token " + token)
         for periods in returnperiods:
 
             request_params = dict(watershed_name=watershed, subbasin_name=subbasin,
                                   return_period=int(periods), forecast_folder=date)
-            request_headers = dict(Authorization=token)
+
             res = requests.get(api_url, params=request_params, headers=request_headers)
 
             if res:
@@ -313,7 +313,7 @@ def createprobnetcdf(request):
 
     request_params = dict(watershed_name=watershed, subbasin_name=subbasin,
                           reach_id=comid, forecast_folder=date, ensemble='1-51')
-    request_headers = dict(Authorization=token)
+    request_headers = dict(Authorization="Token " + token)
     res = requests.get(api_url, params=request_params, headers=request_headers)
 
     if res:
@@ -454,7 +454,7 @@ def getdates(request):
 
         session.close()
 
-        request_headers = dict(Authorization=token)
+        request_headers = dict(Authorization="Token " + token)
         request_params = dict(watershed_name=watershed, subbasin_name=subbasin, reach_id=reach)
         res = requests.get(api_url, params=request_params, headers=request_headers)
 

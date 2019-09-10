@@ -14,7 +14,7 @@ dependencies = []
 
 setup(
     name=release_package,
-    version='0.0.1',
+    version='3.0.1',
     description='',
     long_description='',
     keywords='',
